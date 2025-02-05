@@ -1,0 +1,21 @@
+<%- include('./partials/top.ejs') %> <%- include('./partials/header.ejs') %>
+<div class="flex items-center justify-center min-h-screen bg-gray-100 px-4 py-20">
+    <div class=" p-8 sm:p-10 rounded-2xl shadow-2xl w-full max-w-sm sm:max-w-md text-center">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">Your UPI QR Code</h2>
+        <div id="qrcode" class="flex justify-center mb-6">
+            <img class="w-48 h-48 sm:w-56 sm:h-56 rounded-lg shadow-lg border border-gray-300"
+                src="<%= imgQrCODE %>"
+                alt="UPI QR Code" />
+        </div>
+        <a href="<%= imgQrCODE %>"
+            download
+            class="block w-full bg-blue-600 text-white py-3 rounded-xl font-semibold mt-6 transition duration-300 hover:bg-blue-700 shadow-md hover:shadow-lg">
+            DownLoad QR Code
+        </a>
+        <a href="/qrcode-generater" 
+            class="block w-full bg-blue-600 text-white py-3 rounded-xl font-semibold mt-6 transition duration-300 hover:bg-blue-700 shadow-md hover:shadow-lg">
+            Generate Another QR Code
+        </a>
+    </div>
+</div>
+<%- include('./partials/bottom.ejs') %>
