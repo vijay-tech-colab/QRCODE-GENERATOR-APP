@@ -1,14 +1,42 @@
-<header class="bg-blue-200  p-4 fixed w-full shadow-md z-50">
+<header class="bg-blue-200 p-4 fixed w-full shadow-md z-50">
     <div class="container mx-auto flex justify-between items-center">
+        <!-- Left Side: Logo & Title -->
         <div class="flex items-center space-x-3">
-            <!-- QR Code Logo -->
             <img src="https://cdn-icons-png.flaticon.com/512/4247/4247706.png" 
                  alt="QR Code Logo" 
                  class="w-8 h-8">
-            <h1 class="md:text-2xl font-bold">QR Code Generator</h1>
+            <h1 class="text-lg md:text-2xl font-bold">QR Code Generator</h1>
         </div>
-        <nav>
-            <a href="/qrcode-generater" class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-500 hover:text-white transition duration-300 ease-in-out">QRCODE GENERATE</a>
+
+        <!-- Navigation for Large Screens -->
+        <nav class="hidden md:flex space-x-4">
+            <a href="/qrcode-generater" 
+               class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-500 hover:text-white transition duration-300 ease-in-out">
+                QRCODE GENERATE
+            </a>
         </nav>
+
+        <!-- Hamburger Menu Button -->
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" 
+                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
     </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden bg-blue-100 mt-5 md:hidden">
+        <a href="/qrcode-generater" 
+           class="block text-center text-blue-600 py-2 hover:bg-blue-300 hover:text-white transition">
+            QRCODE GENERATE
+        </a>
+    </nav>
 </header>
+
+<script>
+    // Toggle Mobile Menu
+    document.getElementById("menu-btn").addEventListener("click", function() {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+</script>
